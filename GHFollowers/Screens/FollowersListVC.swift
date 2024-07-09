@@ -17,6 +17,8 @@ class FollowersListVC: UIViewController {
     var dataSource: UICollectionViewDiffableDataSource<Section, Follower>!
     var followers: [Follower] = []
     
+    @Injected var networkManager: NetworkManager!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -69,7 +71,7 @@ private extension FollowersListVC {
     }
     
     func getFollowers() {
-        NetworkManager.shared.getFollowers(for: username, page: 1) { [weak self] result in
+        networkManager.getFollowers(for: username, page: 1) { [weak self] result in
             guard let self else { return }
             switch result {
             case .success(let followers):

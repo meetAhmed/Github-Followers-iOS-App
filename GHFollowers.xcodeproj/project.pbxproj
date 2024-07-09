@@ -26,6 +26,8 @@
 		F194837C2C369CE200B0DA98 /* FollowersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F194837B2C369CE200B0DA98 /* FollowersCell.swift */; };
 		F194837E2C369D5200B0DA98 /* GFAvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F194837D2C369D5200B0DA98 /* GFAvatarImageView.swift */; };
 		F19F3AC42C1C0CD4004DF3D2 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19F3AC32C1C0CD4004DF3D2 /* UIViewController+Ext.swift */; };
+		F1F2B3E62C3D2FC400F8B9DE /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = F1F2B3E52C3D2FC400F8B9DE /* Swinject */; };
+		F1F2B3E92C3D341D00F8B9DE /* DependencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F2B3E82C3D341D00F8B9DE /* DependencyManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,7 @@
 		F194837B2C369CE200B0DA98 /* FollowersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersCell.swift; sourceTree = "<group>"; };
 		F194837D2C369D5200B0DA98 /* GFAvatarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFAvatarImageView.swift; sourceTree = "<group>"; };
 		F19F3AC32C1C0CD4004DF3D2 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
+		F1F2B3E82C3D341D00F8B9DE /* DependencyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1F2B3E62C3D2FC400F8B9DE /* Swinject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +103,7 @@
 		F13F2AAA2C1AC3AF00E38AA2 /* GHFollowers */ = {
 			isa = PBXGroup;
 			children = (
+				F1F2B3E72C3D340A00F8B9DE /* DI */,
 				F19483772C36999500B0DA98 /* Utilities */,
 				F134DFF52C2D863B00AB520B /* Managers */,
 				F134DFF02C2D78A400AB520B /* Models */,
@@ -170,6 +175,14 @@
 			path = Support;
 			sourceTree = "<group>";
 		};
+		F1F2B3E72C3D340A00F8B9DE /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				F1F2B3E82C3D341D00F8B9DE /* DependencyManager.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -186,6 +199,9 @@
 			dependencies = (
 			);
 			name = GHFollowers;
+			packageProductDependencies = (
+				F1F2B3E52C3D2FC400F8B9DE /* Swinject */,
+			);
 			productName = GHFollowers;
 			productReference = F13F2AA82C1AC3AF00E38AA2 /* GHFollowers.app */;
 			productType = "com.apple.product-type.application";
@@ -214,6 +230,9 @@
 				Base,
 			);
 			mainGroup = F13F2A9F2C1AC3AF00E38AA2;
+			packageReferences = (
+				F1F2B3E42C3D2FC400F8B9DE /* XCRemoteSwiftPackageReference "Swinject" */,
+			);
 			productRefGroup = F13F2AA92C1AC3AF00E38AA2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -256,6 +275,7 @@
 				F134DFF72C2D864600AB520B /* NetworkManager.swift in Sources */,
 				F13F2AAE2C1AC3AF00E38AA2 /* SceneDelegate.swift in Sources */,
 				F13F2AC62C1AD38700E38AA2 /* GFTextField.swift in Sources */,
+				F1F2B3E92C3D341D00F8B9DE /* DependencyManager.swift in Sources */,
 				F13F2ACC2C1B070D00E38AA2 /* GFBodyLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -471,6 +491,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F1F2B3E42C3D2FC400F8B9DE /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F1F2B3E52C3D2FC400F8B9DE /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F1F2B3E42C3D2FC400F8B9DE /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F13F2AA02C1AC3AF00E38AA2 /* Project object */;
 }
